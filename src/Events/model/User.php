@@ -8,10 +8,26 @@
 
 namespace Events\model;
 
-
+/**
+ * @Entity
+ * @Table(name="users")
+ */
 class User{
+    /**
+     * @var integer @Id
+     * @Column(name="id", type="integer")
+     * @GeneratedValue(strategy="AUTO")
+     */
     private $id;
+    /**
+     * @var string
+     * @Column(type="text")
+     */
     private $login;
+    /**
+     * @var string
+     * @Column(type="text", length=32)
+     */
     private $pass;
 
     /**

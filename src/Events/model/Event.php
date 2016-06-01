@@ -8,13 +8,41 @@
 
 namespace Events\model;
 
-
+/**
+ * @Entity
+ * @Table(name="event")
+ */
 class Event{
+
+    /**
+     * @var integer @Id
+     * @Column(name="id", type="integer")
+     * @GeneratedValue(strategy="AUTO")
+     */
     private $id;
+    /**
+     * @var string
+     * @Column()
+     */
     private $title;
+    /**
+     * @var string
+     * @Column(type="text")
+     */
     private $description;
+    /**
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumn(name="author", referencedColumnName="id")
+     */
     private $author;
+    /**
+     * @Column(type="datetime")
+     */
     private $date;
+    /**
+     * @var integer
+     * @Column(type="smallint")
+     */
     private $priority;
 
     /**

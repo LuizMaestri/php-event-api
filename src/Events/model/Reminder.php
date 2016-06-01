@@ -8,11 +8,31 @@
 
 namespace Events\model;
 
-
+/**
+ * @Entity
+ * @Table(name="reminder")
+ */
 class Reminder{
+    /**
+     * @var integer @Id
+     * @Column(name="id", type="integer")
+     * @GeneratedValue(strategy="AUTO")
+     */
     private $id;
+    /**
+     * @var string
+     * @Column(type="text")
+     */
     private $description;
+    /**
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumn(name="author", referencedColumnName="id")
+     */
     private $author;
+    /**
+     * @var integer
+     * @Column(type="smallint")
+     */
     private $period;
 
     /**
