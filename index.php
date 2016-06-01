@@ -8,6 +8,7 @@
 $loader = require __DIR__ . '/vendor/autoload.php';
 
 use Events\api\EventApi;
+use Events\api\ReminderApi;
 use Slim\App;
 
 $app = new App();
@@ -17,5 +18,6 @@ $app->get('/',function (){
 });
 
 EventApi::setRoute($app);
+ReminderApi::setRoute($app);
 
 $app->run();
