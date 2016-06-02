@@ -9,6 +9,10 @@
 namespace Events\dao;
 
 
+/**
+ * Class ReminderDAO
+ * @package Events\dao
+ */
 class ReminderDAO extends AbstractDAO{
 
     /**

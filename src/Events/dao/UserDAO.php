@@ -8,6 +8,10 @@
 
 namespace Events\dao;
 
+/**
+ * Class UserDAO
+ * @package Events\dao
+ */
 class UserDAO extends AbstractDAO{
 
     /**
