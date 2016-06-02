@@ -14,10 +14,11 @@ use Slim\App;
 $app = new App();
 
 $app->get('/',function (){
-    echo '<h1 style="text-align:center;">ROUTES</h1>';
+    include('routes.html');
 });
 
-EventApi::setRoute($app);
+$api = new EventApi();
+$api->setRoute($app);
 ReminderApi::setRoute($app);
 
 $app->run();
