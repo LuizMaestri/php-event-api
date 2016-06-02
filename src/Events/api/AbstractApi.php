@@ -9,7 +9,13 @@
 namespace Events\api;
 
 
-interface AbstractApi
-{
+interface AbstractApi{
+
+    public static function setRoute($app);
+    public function get($id);
+    public function listAll();
+    public function create($event);
+    public function update($event);
+    public function delete($id);
 
 }

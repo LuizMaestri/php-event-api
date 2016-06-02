@@ -9,47 +9,66 @@
 
 namespace Events\api;
 
-use Events\model\Event;
+use Events\dao\EventDAO;
 use Slim\App;
 
-class EventApi{
+/**
+ * Class EventApi
+ * @package Events\api
+ */
+class EventApi implements AbstractApi{
 
+    /*
+     * @var EventDAO*/
+    private $dao;
+
+    /**
+     * EventApi constructor.
+     */
+    public function __construct(){
+        $this->dao = new EventDAO();
+    }
+
+    /**
+     * Set api routes url
+     * @param App $app
+     */
     public static function setRoute($app){
-        /** @var App $app */
-        $app->get('/event(/(:id))', function ($id){
-            self::get($id);
+        $api = new EventApi();
+        $app->get('/event/', function ($request, $response, $args) use($api){
+            $api->get(1);
         });
-        $app->get('/events(/)', function (){
-            self::listAll();
+        $app->get('/events/', function ($request, $response, $args) use($api){
+            $api->listAll();
         });
-        $app->post('/event(/)', function ($args){
-            self::create($args);
+        $app->post('/event/', function ($args) use($api){
+            $api->create($args);
         });
-        $app->put('/event(/)', function ($args){
-            self::update($args);
+        $app->put('/event/', function ($args) use($api){
+            $api->update($args);
         });
-        $app->delete('/event(/(:id))', function ($id){
-            self::delete($id);
+        $app->delete('/event/{:id}', function ($id) use($api){
+            $api->delete($id);
         });
     }
 
-    public static function get($id){
-        
+    public function get($id){
+        echo json_encode($this->dao->findById($id));
     }
 
-    public static function listAll(){
-        
+    public function listAll(){
+        echo json_encode($this->dao->findAll());
     }
 
-    public static function create($event){
-        
+    public function create($event){
+        $this->dao->insert($event);
     }
 
-    public static function update($event){
-
+    public function update($event){
+        $this->dao->update($event);
     }
 
-    public static function delete($id){
-
+    public function delete($id){
+        $this->dao->delete($id);
     }
 }
