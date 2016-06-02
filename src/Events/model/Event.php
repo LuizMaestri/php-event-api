@@ -13,7 +13,6 @@ namespace Events\model;
  * @Table(name="event")
  */
 class Event{
-
     /**
      * @var integer @Id
      * @Column(name="id", type="integer")
@@ -52,43 +51,42 @@ class Event{
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId(){
         return $this->id;
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
     public function setId($id){
         $this->id = $id;
     }
-
-
+    
     /**
-     * @return mixed
+     * @return string
      */
     public function getTitle(){
         return $this->title;
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      */
     public function setTitle($title){
         $this->title = $title;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDescription(){
         return $this->description;
     }
 
     /**
-     * @param mixed $description
+     * @param string $description
      */
     public function setDescription($description){
         $this->description = $description;
@@ -123,18 +121,17 @@ class Event{
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getPriority(){
         return $this->priority;
     }
 
     /**
-     * @param mixed $priority
+     * @param int $priority
      */
     public function setPriority($priority){
         $this->priority = $priority;
     }
-
 
 }

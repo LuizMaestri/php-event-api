@@ -12,7 +12,7 @@ namespace Events\model;
  * @Entity
  * @Table(name="reminder")
  */
-class Reminder{
+class Reminder {
     /**
      * @var integer @Id
      * @Column(name="id", type="integer")
@@ -42,67 +42,58 @@ class Reminder{
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
-    {
+    public function getId(){
         return $this->id;
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
-    public function setId($id)
-    {
+    public function setId($id){
         $this->id = $id;
     }
-
+    
     /**
-     * @return mixed
+     * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription(){
         return $this->description;
     }
 
     /**
-     * @param mixed $description
+     * @param string $description
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description){
         $this->description = $description;
     }
 
     /**
      * @return mixed
      */
-    public function getAuthor()
-    {
+    public function getAuthor(){
         return $this->author;
     }
 
     /**
      * @param mixed $author
      */
-    public function setAuthor($author)
-    {
+    public function setAuthor($author){
         $this->author = $author;
     }
 
     /**
      * @return mixed
      */
-    public function getPeriod()
-    {
+    public function getPeriod(){
         return $this->period;
     }
 
     /**
      * @param mixed $period
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period){
         $this->period = $period;
     }
-
 }

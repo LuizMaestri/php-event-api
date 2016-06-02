@@ -37,23 +37,21 @@ class User{
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
-    {
+    public function getId(){
         return $this->id;
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
-    public function setId($id)
-    {
+    public function setId($id){
         $this->id = $id;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLogin()
     {
@@ -61,7 +59,7 @@ class User{
     }
 
     /**
-     * @param mixed $login
+     * @param string $login
      */
     public function setLogin($login)
     {
@@ -69,7 +67,7 @@ class User{
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPass()
     {
@@ -77,10 +75,11 @@ class User{
     }
 
     /**
-     * @param mixed $pass
+     * @param string $pass
      */
     public function setPass($pass)
     {
         $this->pass = $pass;
     }
+    
 }
