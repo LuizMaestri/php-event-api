@@ -13,15 +13,7 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
 $paths = array(__DIR__."/src/Events/model");
-$isDevMode = false;
+$project = include ('config.php');
 
-// the connection configuration
-$dbParams = array(
-    'driver'   => 'mysqli',
-    'user'     => 'root',
-    'password' => '',
-    'dbname'   => 'testevent',
-);
-
-$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
-$entityManager = EntityManager::create($dbParams, $config);
+$config = Setup::createAnnotationMetadataConfiguration($paths, $project['devMode']);
+$entityManager = EntityManager::create($project['connectionParams'], $config);
